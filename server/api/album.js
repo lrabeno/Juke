@@ -12,11 +12,11 @@ router.get("/", async (req, res, next) => {
   }
 });
 
-router.get("/:id", async (req, res, next) => {
+router.get("/:albumId", async (req, res, next) => {
   try {
     const singleAlbum = await Album.findOne({
       where: {
-        id: req.params.id,
+        id: req.params.albumId,
       },
       include: [Artist, Song],
     });
